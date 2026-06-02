@@ -1,0 +1,563 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+.bioroot-landing {
+  --bio-bg-cream: #faf9f6;
+  --bio-bg-card: #ffffff;
+  --bio-green: #3f6036;
+  --bio-green-light: #eff3ee;
+  --bio-terracotta: #c97a55;
+  --bio-text: #2c302b;
+  --bio-text-muted: #6b706a;
+  --bio-border: #e6e8e5;
+
+  background-color: var(--bio-bg-cream);
+  color: var(--bio-text);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.bio-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Badges */
+.bio-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--bio-terracotta);
+  background-color: rgba(201, 122, 85, 0.08);
+  border: 1px solid rgba(201, 122, 85, 0.15);
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.bio-badge-sec {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--bio-green);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* Hero Section */
+.bio-hero {
+  padding: 160px 0 100px;
+}
+
+.bio-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.bio-hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.bio-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--bio-green);
+  margin: 0 0 24px;
+  letter-spacing: -0.01em;
+}
+
+.bio-desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--bio-text-muted);
+  margin: 0 0 40px;
+}
+
+.bio-cta-group {
+  display: flex;
+  gap: 16px;
+}
+
+.btn-bio-primary {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: var(--bio-green);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-bio-primary:hover {
+  background-color: #2e4727;
+  transform: translateY(-1px);
+}
+
+.btn-bio-secondary {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: transparent;
+  color: var(--bio-green);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  border: 1px solid var(--bio-green);
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-bio-secondary:hover {
+  background-color: var(--bio-green-light);
+  transform: translateY(-1px);
+}
+
+/* Image styling with leaf-like organic mask */
+.bio-hero-image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.bio-image-border-decoration {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: calc(100% + 30px);
+  height: calc(100% + 30px);
+  border: 1.5px solid var(--bio-green);
+  border-radius: 40px 10px 40px 10px;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.bio-hero-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 36px 8px 36px 8px;
+  box-shadow: 0 20px 40px rgba(44, 48, 43, 0.08);
+  object-fit: cover;
+}
+
+/* Science Section */
+.bio-science-section {
+  padding: 100px 0;
+  background-color: var(--bio-green-light);
+  border-top: 1px solid var(--bio-border);
+  border-bottom: 1px solid var(--bio-border);
+}
+
+.bio-section-header-center {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 60px;
+}
+
+.bio-section-header-center h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--bio-green);
+  margin: 0 0 16px;
+}
+
+.bio-section-header-center p {
+  color: var(--bio-text-muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.science-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+/* Science Simulator Canvas */
+.science-visual-panel {
+  background-color: var(--bio-bg-card);
+  border: 1px solid var(--bio-border);
+  border-radius: 16px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.science-canvas {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 1px dashed rgba(63, 96, 54, 0.2);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  background-color: #fafbfc;
+}
+
+.cell-nucleus {
+  width: 90px;
+  height: 90px;
+  background-color: var(--bio-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  box-shadow: 0 10px 25px rgba(63, 96, 54, 0.3);
+  z-index: 5;
+}
+
+.cell-nucleus.pulse {
+  animation: cellPulse 3s infinite ease-in-out;
+}
+
+.microbe-particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: var(--bio-terracotta);
+  border-radius: 50%;
+  animation: orbitMove 10s infinite linear;
+  box-shadow: 0 0 8px rgba(201, 122, 85, 0.4);
+}
+
+.science-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-control-science {
+  background-color: var(--bio-green-light);
+  border: 1px solid rgba(63, 96, 54, 0.2);
+  color: var(--bio-green);
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-control-science:hover {
+  background-color: var(--bio-green);
+  color: #ffffff;
+}
+
+.science-status {
+  font-size: 12px;
+  color: var(--bio-text-muted);
+}
+
+.science-status span.active {
+  color: var(--bio-green);
+  font-weight: 600;
+}
+
+.science-status span.paused {
+  color: var(--bio-terracotta);
+  font-weight: 600;
+}
+
+/* Accordion */
+.science-info-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.step-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.accordion-item {
+  background-color: var(--bio-bg-card);
+  border: 1px solid var(--bio-border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.accordion-item.expanded {
+  border-color: rgba(63, 96, 54, 0.4);
+}
+
+.accordion-trigger {
+  width: 100%;
+  padding: 20px 24px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: inherit;
+}
+
+.step-phase {
+  font-size: 10px;
+  font-weight: bold;
+  color: var(--bio-terracotta);
+  letter-spacing: 0.05em;
+}
+
+.step-title-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--bio-green);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 24px;
+  transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+}
+
+.accordion-item.expanded .accordion-content {
+  max-height: 150px;
+  padding: 0 24px 20px 24px;
+}
+
+.accordion-content p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--bio-text-muted);
+}
+
+/* Metrics Section */
+.bio-metrics {
+  padding: 100px 0;
+}
+
+.bio-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.metric-card {
+  background-color: var(--bio-bg-card);
+  border: 1px solid var(--bio-border);
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.01);
+  text-align: center;
+}
+
+.metric-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--bio-terracotta);
+  display: block;
+  margin-bottom: 16px;
+}
+
+.metric-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: var(--bio-green);
+}
+
+.metric-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--bio-text-muted);
+  margin: 0;
+}
+
+/* Application Form */
+.bio-apply-section {
+  padding: 100px 0 140px;
+}
+
+.apply-card-bio {
+  background-color: var(--bio-bg-card);
+  border: 1px solid var(--bio-border);
+  border-radius: 20px;
+  padding: 60px 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 15px 40px rgba(44, 48, 43, 0.03);
+}
+
+.apply-header-bio {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.apply-header-bio h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--bio-green);
+  margin: 0 0 12px;
+}
+
+.apply-header-bio p {
+  color: var(--bio-text-muted);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.apply-form-bio {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.form-group-bio {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group-bio label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--bio-text);
+}
+
+.input-bio {
+  border: 1px solid var(--bio-border);
+  border-radius: 6px;
+  padding: 14px;
+  outline: none;
+  font-size: 14px;
+  background-color: #fafbfc;
+  transition: border-color 0.2s ease;
+}
+
+.input-bio:focus {
+  border-color: var(--bio-green);
+}
+
+.btn-bio-submit {
+  background-color: var(--bio-green);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 16px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-bio-submit:hover {
+  background-color: #2e4727;
+}
+
+.apply-success-bio {
+  text-align: center;
+  padding: 24px;
+  background-color: var(--bio-green-light);
+  border: 1px solid rgba(63, 96, 54, 0.2);
+  border-radius: 8px;
+  animation: fadeIn 0.4s ease;
+}
+
+.apply-success-bio h3 {
+  color: var(--bio-green);
+  font-size: 20px;
+  margin: 0 0 10px;
+}
+
+.apply-success-bio p {
+  color: var(--bio-text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Footer */
+.bio-footer {
+  border-top: 1px solid var(--bio-border);
+  padding: 40px 0;
+  text-align: center;
+  font-size: 12px;
+  color: var(--bio-text-muted);
+}
+
+@keyframes cellPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes orbitMove {
+  from { transform: rotate(0deg) translate(90px) rotate(0deg); }
+  to { transform: rotate(360deg) translate(90px) rotate(-360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .bio-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  .bio-hero-text {
+    align-items: center;
+  }
+  .bio-title {
+    font-size: 38px;
+  }
+  .science-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .bio-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .bio-hero {
+    padding: 120px 0 60px;
+  }
+  .bio-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-bio-primary, .btn-bio-secondary {
+    width: 100%;
+    text-align: center;
+  }
+  .apply-card-bio {
+    padding: 30px 20px;
+  }
+}

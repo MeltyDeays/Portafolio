@@ -1,0 +1,600 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+.apex-landing {
+  --apex-bg: #090a0f;
+  --apex-red: #f43f5e;
+  --apex-red-glow: rgba(244, 63, 94, 0.15);
+  --apex-border: #1e293b;
+  --apex-border-active: #f43f5e;
+  --apex-text: #e2e8f0;
+  --apex-text-muted: #64748b;
+  --apex-grid-color: rgba(244, 63, 94, 0.02);
+
+  background-color: var(--apex-bg);
+  color: var(--apex-text);
+  font-family: 'JetBrains Mono', monospace;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.apex-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Grid overlay background */
+.grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(to right, var(--apex-grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--apex-grid-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Badges */
+.apex-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--apex-red);
+  border: 1px solid var(--apex-red);
+  padding: 6px 14px;
+  background-color: rgba(244, 63, 94, 0.05);
+  margin-bottom: 24px;
+  box-shadow: 0 0 15px rgba(244, 63, 94, 0.1);
+}
+
+.apex-sub {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--apex-red);
+  margin-bottom: 16px;
+}
+
+/* Hero Section */
+.apex-hero {
+  padding: 180px 0 100px;
+  position: relative;
+  z-index: 1;
+}
+
+.apex-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.apex-hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.apex-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0 0 24px;
+  color: #ffffff;
+  border-left: 4px solid var(--apex-red);
+  padding-left: 20px;
+}
+
+.apex-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--apex-text-muted);
+  margin: 0 0 40px;
+}
+
+.hud-countdown-box {
+  border: 1px solid var(--apex-border);
+  padding: 16px 24px;
+  background-color: rgba(15, 23, 42, 0.5);
+  margin-bottom: 40px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hud-label {
+  font-size: 10px;
+  color: var(--apex-text-muted);
+  margin-bottom: 8px;
+}
+
+.hud-time {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--apex-red);
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 10px rgba(244, 63, 94, 0.3);
+}
+
+.apex-cta-group {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.btn-apex-primary {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: var(--apex-red);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid var(--apex-red);
+  text-align: center;
+}
+
+.btn-apex-primary:hover {
+  background-color: #e11d48;
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.4);
+}
+
+.btn-apex-secondary {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: transparent;
+  color: var(--apex-text);
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  border: 1px solid var(--apex-border);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  text-align: center;
+}
+
+.btn-apex-secondary:hover {
+  border-color: var(--apex-red);
+  background-color: rgba(244, 63, 94, 0.02);
+}
+
+/* HUD Panel */
+.apex-hud-display {
+  display: flex;
+  justify-content: center;
+}
+
+.hud-panel {
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid var(--apex-border);
+  background-color: rgba(9, 10, 15, 0.8);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.hud-panel-header {
+  border-bottom: 1px solid var(--apex-border);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.blink-dot {
+  color: var(--apex-red);
+  animation: blink 1.2s step-end infinite;
+}
+
+.hud-visual-feed-wrapper {
+  position: relative;
+  border-bottom: 1px solid var(--apex-border);
+  overflow: hidden;
+  height: 180px;
+}
+
+.hud-scanline-effect {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%);
+  background-size: 100% 4px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hud-live-camera-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.hud-cam-tag {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  font-size: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2px 6px;
+  border-radius: 2px;
+  border: 1px solid var(--apex-border);
+  z-index: 3;
+  color: var(--apex-red);
+}
+
+.hud-panel-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.telemetry-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+  padding-bottom: 10px;
+}
+
+.telemetry-row span:first-child {
+  color: var(--apex-text-muted);
+}
+
+.telemetry-row span:last-child {
+  font-weight: 700;
+}
+
+.hud-radar-simulation {
+  height: 120px;
+  border: 1px solid var(--apex-border);
+  background-color: #030406;
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+.radar-sweep {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  background: conic-gradient(from 0deg, var(--apex-red-glow) 0deg, transparent 90deg);
+  transform-origin: center center;
+  margin-top: -100px;
+  margin-left: -100px;
+  animation: radarRotation 4s linear infinite;
+  pointer-events: none;
+}
+
+.radar-target {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: var(--apex-red);
+  border-radius: 50%;
+  top: 35%;
+  left: 52%;
+  box-shadow: 0 0 10px var(--apex-red);
+  animation: blink 2s step-end infinite;
+}
+
+/* Timeline Section */
+.apex-timeline {
+  padding: 100px 0;
+  border-top: 1px solid var(--apex-border);
+  border-bottom: 1px solid var(--apex-border);
+}
+
+.apex-section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.apex-section-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.timeline-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.timeline-selector-side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.timeline-step-btn {
+  background-color: transparent;
+  border: 1px solid var(--apex-border);
+  color: var(--apex-text-muted);
+  padding: 16px 24px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.timeline-step-btn:hover {
+  border-color: rgba(244, 63, 94, 0.4);
+  color: var(--apex-text);
+}
+
+.timeline-step-btn.active {
+  border-color: var(--apex-red);
+  color: var(--apex-red);
+  background-color: rgba(244, 63, 94, 0.02);
+}
+
+.step-index {
+  display: block;
+  font-size: 10px;
+  margin-bottom: 4px;
+}
+
+.step-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* HUD Data Card */
+.hud-data-card {
+  border: 1px solid var(--apex-border);
+  background-color: rgba(15, 23, 42, 0.4);
+  padding: 44px;
+}
+
+.data-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  border-bottom: 1px solid var(--apex-border);
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+
+.data-lbl {
+  display: block;
+  font-size: 10px;
+  color: var(--apex-text-muted);
+  margin-bottom: 8px;
+}
+
+.data-val {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.data-body-desc h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  color: var(--apex-red);
+}
+
+.data-body-desc p {
+  font-size: 13px;
+  color: var(--apex-text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Specs */
+.apex-specs {
+  padding: 100px 0;
+}
+
+.apex-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.apex-spec-card {
+  border: 1px solid var(--apex-border);
+  padding: 36px;
+  background-color: rgba(9, 10, 15, 0.5);
+  transition: border-color 0.2s ease;
+}
+
+.apex-spec-card:hover {
+  border-color: var(--apex-red);
+}
+
+.card-num {
+  display: block;
+  font-size: 11px;
+  color: var(--apex-red);
+  margin-bottom: 20px;
+}
+
+.apex-spec-card h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 16px;
+}
+
+.apex-spec-card p {
+  font-size: 13px;
+  color: var(--apex-text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Application Section Form */
+.apex-apply {
+  padding: 100px 0 140px;
+}
+
+.apply-card-hud {
+  border: 1px solid var(--apex-border);
+  background-color: rgba(15, 23, 42, 0.4);
+  padding: 60px 40px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.apply-header-hud h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+.apply-header-hud p {
+  color: var(--apex-text-muted);
+  font-size: 13px;
+  line-height: 1.7;
+  text-align: center;
+  margin: 0 0 40px;
+}
+
+.apply-form-hud {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-group-hud {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group-hud label {
+  font-size: 10px;
+  font-weight: bold;
+  color: var(--apex-red);
+}
+
+.input-hud {
+  background-color: rgba(9, 10, 15, 0.8);
+  border: 1px solid var(--apex-border);
+  color: #ffffff;
+  padding: 14px;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input-hud:focus {
+  border-color: var(--apex-red);
+}
+
+.btn-hud-submit {
+  background-color: var(--apex-red);
+  color: #ffffff;
+  border: none;
+  padding: 16px;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 10px;
+}
+
+.btn-hud-submit:hover {
+  background-color: #e11d48;
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.3);
+}
+
+.apply-success-hud {
+  text-align: center;
+  padding: 30px;
+  border: 1px solid var(--apex-red);
+  background-color: rgba(244, 63, 94, 0.05);
+  animation: fadeIn 0.4s ease;
+}
+
+.apply-success-hud h3 {
+  color: var(--apex-red);
+  font-size: 18px;
+  margin: 0 0 12px;
+}
+
+.apply-success-hud p {
+  color: var(--apex-text-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Footer */
+.apex-footer {
+  border-top: 1px solid var(--apex-border);
+  padding: 40px 0;
+  text-align: center;
+  font-size: 11px;
+  color: var(--apex-text-muted);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes radarRotation {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .apex-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    text-align: center;
+  }
+  .apex-hero-text {
+    align-items: center;
+  }
+  .apex-title {
+    font-size: 38px;
+    border-left: none;
+    padding-left: 0;
+  }
+  .timeline-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .apex-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .btn-apex-primary, .btn-apex-secondary {
+    width: 100%;
+  }
+  .apex-cta-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .apply-card-hud {
+    padding: 32px 20px;
+  }
+}
